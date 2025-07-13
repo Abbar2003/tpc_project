@@ -38,27 +38,28 @@ class RegisterScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: SafeArea(
-        child: BlocListener<AuthCubit,AuthState>(
+        child: BlocListener<AuthCubit, AuthState>(
           listener: (context, state) {
             if (state is SignUpSucces) {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => SignInScreen()));
-                  c.email.clear();
-                  c.password.clear();
+              c.email.clear();
+              c.password.clear();
             }
-            if(state is SignUpError){
+            if (state is SignUpError) {
               AwesomeDialog(
-            context: context,
-            dialogType: DialogType.error,
-            animType: AnimType.rightSlide,btnOkColor: MyAppColors.kPrimary,
-            title: 'Invalid credentials',
-            desc: state.error,
-            btnCancelOnPress: () {},
-            btnOkOnPress: () {},
-            )..show();
+                context: context,
+                dialogType: DialogType.error,
+                animType: AnimType.rightSlide,
+                btnOkColor: MyAppColors.kPrimary,
+                title: 'Invalid credentials',
+                desc: state.error,
+                btnCancelOnPress: () {},
+                btnOkOnPress: () {},
+              ).show();
             }
           },
-          child: BlocBuilder<AuthCubit,AuthState>(
+          child: BlocBuilder<AuthCubit, AuthState>(
             builder: (context, state) {
               return Form(
                 key: registerKey,
@@ -167,7 +168,7 @@ class RegisterScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 8.h),
                         PasswordTextField(
-                          keyboard: TextInputType.visiblePassword,
+                          // keyboard: TextInputType.visiblePassword,
                           save: (value) {
                             c.password.text = value!;
                           },
@@ -193,7 +194,8 @@ class RegisterScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 8.h),
-                        PrimaryTextformField(keyboard: TextInputType.phone,
+                        PrimaryTextformField(
+                          keyboard: TextInputType.phone,
                           save: (value) {
                             c.phone.text = value!;
                           },

@@ -5,7 +5,6 @@ import 'package:tcp/constants/on_boarding.dart';
 import 'package:tcp/screens/register_screen.dart';
 import 'package:tcp/widgets/auth_widget/primary_button.dart';
 import 'package:tcp/widgets/onboarding_widgets/on_boarding_card.dart';
-import 'package:tcp/widgets/onboarding_widgets/onboarding_text_card.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -67,7 +66,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               dotsCount: onBoardinglist.length,
               position: _currentIndex,
               decorator: DotsDecorator(
-                color: MyAppColors.kPrimary.withOpacity(0.4),
+                color: MyAppColors.kPrimary,
                 size: Size.square(10.0.sp),
                 activeSize: Size(20.0.sp, 8.0.sp),
                 activeShape: RoundedRectangleBorder(
@@ -89,7 +88,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 Text(
                   onBoardinglist[_currentIndex].title,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold, color: Colors.black),
+                  style: TextStyle(
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
                 ),
                 SizedBox(height: 12.h),
                 Padding(
@@ -134,8 +136,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               width: 280.w,
               textColor: MyAppColors.kWhite,
               child: Text(
-                _currentIndex == onBoardinglist.length - 1 ? 'Get Started' : 'Next',
-                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500, color: MyAppColors.kWhite),
+                _currentIndex == onBoardinglist.length - 1
+                    ? 'Get Started'
+                    : 'Next',
+                style: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                    color: MyAppColors.kWhite),
               ),
             ),
           ),
