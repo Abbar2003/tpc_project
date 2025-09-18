@@ -32,7 +32,7 @@ Scalable architecture ready for future modules (supplier portal, external integr
 
 # 🏗️ Tech Stack
 
-Frontend: Flutter (Android / iOS / Web / Desktop) with Riverpod/Bloc state management.
+Frontend: Flutter (Android) with Bloc/Cubit state management.
 
 Backend: Laravel (PHP) using MVC and dedicated service layers.
 
@@ -95,18 +95,6 @@ Real-time profit & loss reports.
 
 Stock shortage and threshold alerts.
 
-# 🧑‍💻 Team
-
-Jaafar Talal Dou – Flutter Frontend
-
-Ghiyath Nahi Azzam – Laravel Backend & UI/UX
-
-Michael Ibrahim Ghosn – Laravel Backend
-
-Mohammad Ayman Issa – Flutter Frontend
-
-Mohammad Ziad Al-Abbar – Flutter Frontend
-
 # 📚 Technical References
 
 Laravel Documentation
@@ -114,3 +102,4 @@ Laravel Documentation
 Flutter Documentation
 
 MySQL Documentation
+
